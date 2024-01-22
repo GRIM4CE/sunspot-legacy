@@ -10,7 +10,7 @@ def index():
         with open(file_path, 'r') as file:
             data = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
-        with open(file_path, 'w') as file:
+        with open(file_path, 'w+') as file:
             data = {'number': 0}
             json.dump(data, file)
 

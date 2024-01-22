@@ -14,5 +14,5 @@ def incrementJSONFileNumber(file_path):
     new_number = current_number + 1
 
     # Write the updated number back to the JSON file
-    with open(file_path, 'w') as file:
+    with open(file_path, 'w+') as file:
         json.dump({'number': new_number}, file)
