@@ -9,3 +9,5 @@ instance/
 # Apple
 .DS_Store
 
+#Project
+temp/*
