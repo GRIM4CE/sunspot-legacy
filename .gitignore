@@ -10,4 +10,4 @@ instance/
 .DS_Store
 
 #Project
-temp/*
+temp/**/*
