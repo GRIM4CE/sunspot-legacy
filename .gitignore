@@ -1,0 +1,11 @@
+# Python
+__pycache__
+venv
+
+# Flask
+instance/
+.webassets-cache
+
+# Apple
+.DS_Store
+
