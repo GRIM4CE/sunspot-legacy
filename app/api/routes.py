@@ -9,8 +9,8 @@ def index():
     try:
         data_list = get_sunspot()
         return jsonify(data_list)
-    except ():
-        print("error")
+    except Exception as e:
+        return f"Error: {str(e)}"
         
 
 

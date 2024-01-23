@@ -15,7 +15,7 @@ db = LocalProxy(get_db)
 
 def get_sunspot():
     try:
-        cursor = db.sunspot_records.find({}, { 'time': 1, 'count': 1, '_id': 0})
+        cursor = db.sunspot_records.find({}, { 'time': 1, 'visible': 1, 'uv': 1, 'ir': 1, '_id': 0})
         data_list = []
         for doc in cursor:
             # Format the datetime object to a string
@@ -24,7 +24,9 @@ def get_sunspot():
             # Create a new dictionary with the formatted time
             formatted_doc = {
                 'time': formatted_time,
-                'count': doc['count']
+                'visible': doc['visible'],
+                'uv': doc['uv'],
+                'ir': doc['ir'],
             }
 
             data_list.append(formatted_doc)
@@ -33,10 +35,9 @@ def get_sunspot():
     except Exception as e:
         raise e 
     
-def create_sunspot_record():
+def create_sunspot_record(data):
     try:
-        current_datetime = datetime.utcnow()
-        inserted_id = db.sunspot_records.insert_one({"time": current_datetime, "count": db.sunspot_records.count_documents({}) + 1}).inserted_id
+        inserted_id = db.sunspot_records.insert_one(data).inserted_id
         return inserted_id
     except Exception as e:
         raise e 

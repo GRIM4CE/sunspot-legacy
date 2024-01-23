@@ -3,3 +3,4 @@ Flask==3.0.1
 Flask-APScheduler==1.13.1
 flask_pymongo==2.3.0
 python-dotenv==1.0.0 
+seeed-python-si114x==1.1.0 

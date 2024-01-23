@@ -8,7 +8,6 @@ def create_app():
     app.config.from_object(Config)
     
     app.register_blueprint(api_bp)
-    # app.register_blueprint(api_bp, url_prefix='/api')
 
     scheduler.init_app(app)
     scheduler.start()
