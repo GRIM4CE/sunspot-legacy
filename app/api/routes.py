@@ -1,17 +1,24 @@
 from flask import Blueprint, jsonify
-import json
+from app.db import get_sunspot, drop_records
+from bson import json_util
 
 api_bp = Blueprint('api', __name__)
 
-@api_bp.route('/')
+@api_bp.route('/', methods=['GET'])
 def index():
-    file_path = './temp/data.json'
     try:
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
-        with open(file_path, 'w+') as file:
-            data = {'number': 0}
-            json.dump(data, file)
+        data_list = get_sunspot()
+        response_json = json_util.dumps(data_list)
+        return response_json
+    except ():
+        print("error")
+        
 
-    return jsonify(data)
+
+@api_bp.route('/drop', methods=['GET'])
+def drop_records_route():
+    try:
+        deleted_count = drop_records()
+        return f"Deleted {deleted_count} records."
+    except Exception as e:
+        return f"Error: {str(e)}"
