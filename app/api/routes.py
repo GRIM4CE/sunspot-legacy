@@ -9,7 +9,7 @@ def index():
     try:
         data_list = get_sunspot()
         response_json = json_util.dumps(data_list)
-        return response_json
+        return jsonify(response_json)
     except ():
         print("error")
         
