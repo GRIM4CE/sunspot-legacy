@@ -8,8 +8,7 @@ api_bp = Blueprint('api', __name__)
 def index():
     try:
         data_list = get_sunspot()
-        response_json = json_util.dumps(data_list)
-        return jsonify(response_json)
+        return jsonify(data_list)
     except ():
         print("error")
         

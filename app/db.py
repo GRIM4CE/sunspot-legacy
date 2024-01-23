@@ -35,7 +35,7 @@ def get_sunspot():
     
 def create_sunspot_record():
     try:
-        current_datetime = datetime.now().utcfromtimestamp()
+        current_datetime = datetime.utcnow()
         inserted_id = db.sunspot_records.insert_one({"time": current_datetime, "count": db.sunspot_records.count_documents({}) + 1}).inserted_id
         return inserted_id
     except Exception as e:
