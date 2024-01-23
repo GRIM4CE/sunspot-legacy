@@ -15,6 +15,7 @@ def get_light_reading():
             document = {"time": current_datetime, "visible": visible, "uv": uv, "ir": ir}
 
             id = create_sunspot_record(document)
+            print(id)
         
         except (RuntimeError):
             print(RuntimeError)
