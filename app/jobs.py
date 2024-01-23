@@ -10,4 +10,4 @@ def counter():
         except (RuntimeError):
             print(RuntimeError)
 
-scheduler.add_job(id='counter1', func=counter, trigger='interval', seconds=15)
+scheduler.add_job(id='counter1', func=counter, trigger='interval', minutes=15)
