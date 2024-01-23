@@ -18,14 +18,14 @@ def get_sunspot():
         data_list = [doc for doc in cursor]
         return data_list
     except Exception as e:
-        return e
+        raise e 
     
 def create_sunspot_record(data):
     try:
         inserted_id = db.sunspot_records.insert_one(data).inserted_id
         return inserted_id
     except Exception as e:
-        return e
+        raise e 
     
 def drop_records():
     try:
