@@ -1,6 +1,7 @@
 from flask import current_app, g
 from werkzeug.local import LocalProxy
 from flask_pymongo import PyMongo
+from datetime import datetime
 
 def get_db():
     db = getattr(g, "_database", None)
@@ -20,9 +21,10 @@ def get_sunspot():
     except Exception as e:
         raise e 
     
-def create_sunspot_record(data):
+def create_sunspot_record():
     try:
-        inserted_id = db.sunspot_records.insert_one(data).inserted_id
+        current_datetime = datetime.now()
+        inserted_id = db.sunspot_records.insert_one({"time": current_datetime, "count": db.sunspot_records.count_documents({}) + 1}).inserted_id
         return inserted_id
     except Exception as e:
         raise e 
