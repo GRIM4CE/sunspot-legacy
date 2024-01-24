@@ -20,4 +20,4 @@ def get_light_reading():
         except (RuntimeError):
             print(RuntimeError)
 
-scheduler.add_job(id='get_light_reading1', func=get_light_reading, trigger='interval', minutes=30)
+scheduler.add_job(id='get_light_reading1', func=get_light_reading, trigger='interval', minutes=10)
