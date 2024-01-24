@@ -15,10 +15,10 @@ This application is designed to be configured on a Raspberry Pi running Debian (
 Hook up Si114x to Raspberry Pi
 
 ### Connect the Si114x to the Pi's GPIO, GND, and VCC 3.3V. Here's how I connected it:
-  3.3V Power (VCC): Pin 1
-  Ground (GND): Pin 6
-  SDA (Serial Data Line): Pin 3
-  SCL (Serial Clock Line): Pin 5
+- 3.3V Power (VCC): Pin 1
+- Ground (GND): Pin 6
+- SDA (Serial Data Line): Pin 3
+- SCL (Serial Clock Line): Pin 5
 
 ### Ensure Your Raspberry Pi has the I2C Interface Enabled
 - Run `sudo raspi-config`.
