@@ -2,6 +2,7 @@ from .utils.extensions import scheduler
 from .db import create_sunspot_record 
 from datetime import datetime
 from .utils.shared import shared_storage, storage_lock
+from config import Config
 
 def get_light_reading():
     with scheduler.app.app_context():
@@ -20,4 +21,4 @@ def get_light_reading():
         except (RuntimeError):
             print(RuntimeError)
 
-scheduler.add_job(id='get_light_reading1', func=get_light_reading, trigger='interval', minutes=10)
+scheduler.add_job(id='get_light_reading1', func=get_light_reading, trigger='interval', seconds=Config.RECORD_TIME_INTERVAL)

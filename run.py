@@ -3,6 +3,7 @@ import time
 from seeed_si114x import grove_si114x
 from threading import Thread
 from app.utils.shared import storage_lock, shared_storage
+from config import Config
 
 def main_loop():
     light = grove_si114x()
@@ -17,7 +18,7 @@ def main_loop():
                 shared_storage['visible'] = visible[0],
                 shared_storage['uv'] = uv[0],
                 shared_storage['ir'] = ir,
-            time.sleep(600)
+            time.sleep(Config.RECORD_TIME_INTERVAL)
     except Exception as e:
         print(f"Error reading from sensor: {e}")
 
