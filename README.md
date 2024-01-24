@@ -30,6 +30,10 @@ Hook up Si114x to Raspberry Pi
 ### Detect the Sensor
 - Use the command `sudo i2cdetect -y 1` to check if the Raspberry Pi detects the sensor. The sensor should appear at `0x60` for Si114x.
 
+### Configuration
+- Create a `.env` file in your project directory.
+- Add a key named `MONGO_URI` and set its value to your Mongo Cloud DB URI or a local MongoDB URI. This will be used for database connections.
+
 ### To Get the Python Portion Working Inside the Working Directory
 - Install venv with `python3 -m venv venv`.
 - Activate venv with `source venv/bin/activate`.
