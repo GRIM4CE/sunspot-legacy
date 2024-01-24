@@ -38,7 +38,6 @@ Hook up Si114x to Raspberry Pi
 - Install venv with `python3 -m venv venv`.
 - Activate venv with `source venv/bin/activate`.
 - Install packages with `pip3 install -r requirements.txt`.
-- Ensure configurations have been added and the Si114x is working correctly with python3 test.py.
 - Run the program with `python3 run.py`.
 - I use `systemctl` to run the application in the background.
 
