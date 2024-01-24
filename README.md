@@ -37,10 +37,15 @@ Use the command `sudo i2cdetect -y 1` to check if the Raspberry Pi detects the s
 ### To Get the Python Portion Working Inside the Working Directory
 
 Install venv with `python3 -m venv venv`.
+
 Activate venv with `source venv/bin/activate`.
+
 Install packages with `pip3 install -r requirements.txt`.
+
 Ensure configurations have been added and the Si114x is working correctly with python3 test.py.
+
 Run the program with `python3 run.py`.
+
 I use `systemctl` to run the application in the background.
 
 
